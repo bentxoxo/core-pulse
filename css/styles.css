@@ -90,7 +90,7 @@ header .nav-links select, header .nav-links button {
 }
 
 /* ---------------- Search Results ---------------- */
-#results {
+/* #results {
     margin-top: 2rem;
     max-width: 700px;
     text-align: left;
@@ -98,6 +98,15 @@ header .nav-links select, header .nav-links button {
     padding: 1rem 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+*/
+
+#search-results {
+  background-color: #84dcc6;  /* Aero Blue */
+  color: #000000;             /* black text for readability */
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
 }
 
 /* ---------------- Footer ---------------- */
