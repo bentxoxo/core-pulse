@@ -1,16 +1,18 @@
-name: Deploy to S3
+name: Deploy to S3 via CloudFront
 
 on:
   push:
     branches:
-      - main  # Trigger on pushes to main branch
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        shell: bash
     steps:
-      - name: Checkout code
+      - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Configure AWS credentials
@@ -18,14 +20,17 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ap-southeast-2   # Replace with your region
+          aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Sync to S3
+      - name: Sync S3 bucket
         run: |
-          aws s3 sync . s3://core-pulse.io --delete --exact-timestamps
+          aws s3 sync ./core-pulse s3://${{ secrets.S3_BUCKET_NAME }} \
+            --delete \
+            --exact-timestamps \
+            --acl public-read
 
       - name: Invalidate CloudFront cache
         run: |
           aws cloudfront create-invalidation \
-            --distribution-id d1qvesg7kg321r.cloudfront.net \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
             --paths "/*"
