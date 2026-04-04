@@ -27,7 +27,8 @@ jobs:
           aws s3 sync ./ s3://${{ secrets.S3_BUCKET_NAME }} \
             --delete \
             --exact-timestamps \
-            --acl public-read
+            --exclude ".git/*" \
+            --exclude ".DS_Store"
 
       - name: Invalidate CloudFront cache
         run: |
