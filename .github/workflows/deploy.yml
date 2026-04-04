@@ -24,7 +24,7 @@ jobs:
 
       - name: Sync S3 bucket
         run: |
-          aws s3 sync ./core-pulse s3://${{ secrets.S3_BUCKET_NAME }} \
+          aws s3 sync ./ s3://${{ secrets.S3_BUCKET_NAME }} \
             --delete \
             --exact-timestamps \
             --acl public-read
