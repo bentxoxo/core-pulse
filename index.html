@@ -1,50 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Core Pulse</title>
-<link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Core Pulse AI — Your Intelligent AI Workspace. Search anything, write code, build presentations, analyze documents, and generate images — no sign-up required." />
+  <meta name="keywords" content="AI search, AI workspace, Core Pulse, AI chat, document analysis, image generation, code assistant" />
+  <meta property="og:title" content="Core Pulse AI — Your Intelligent AI Workspace" />
+  <meta property="og:description" content="Fast, intelligent, and free AI search. Search, research, or generate instantly at core-pulse.io" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://core-pulse.io" />
+  <meta property="og:image" content="https://core-pulse.io/assets/images/og-preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Core Pulse AI — Your Intelligent AI Workspace" />
+  <meta name="twitter:description" content="Fast, intelligent, and free AI search. Search, research, or generate instantly at core-pulse.io" />
+  <meta name="twitter:image" content="https://core-pulse.io/assets/images/og-preview.png" />
+  <title>Core Pulse AI — Your Intelligent AI Workspace</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-<header>
-  <div class="logo">Core Pulse</div>
-  <div class="nav-links">
-    <select>
-      <option value="en">English</option>
-      <option value="es">Spanish</option>
-      <option value="fr">French</option>
-      <option value="de">German</option>
-      <option value="zh">Chinese</option>
-      <option value="hi">Hindi</option>
-    </select>
-    <a href="signin.html"><button>Sign In</button></a>
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="Core Pulse Home">
+        <img src="assets/images/logo-full.png" alt="Core Pulse" style="height:120px;width:auto;object-fit:contain;" loading="eager">
+      </a>
+      <div class="nav-actions">
+        <select class="lang-select" aria-label="Select language">
+          <option value="en">🌐 English</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="fr">🇫🇷 Français</option>
+          <option value="de">🇩🇪 Deutsch</option>
+          <option value="pt">🇧🇷 Português</option>
+          <option value="it">🇮🇹 Italiano</option>
+          <option value="nl">🇳🇱 Nederlands</option>
+          <option value="ru">🇷🇺 Русский</option>
+          <option value="zh">🇨🇳 中文</option>
+          <option value="ja">🇯🇵 日本語</option>
+          <option value="ko">🇰🇷 한국어</option>
+          <option value="ar">🇸🇦 العربية</option>
+          <option value="hi">🇮🇳 हिन्दी</option>
+          <option value="tr">🇹🇷 Türkçe</option>
+          <option value="pl">🇵🇱 Polski</option>
+          <option value="sv">🇸🇪 Svenska</option>
+          <option value="da">🇩🇰 Dansk</option>
+          <option value="fi">🇫🇮 Suomi</option>
+          <option value="no">🇳🇴 Norsk</option>
+          <option value="id">🇮🇩 Bahasa Indonesia</option>
+        </select>
+        <a href="signup.html" class="btn btn-primary">Sign In</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="hero-badge fade-in">
+          <span class="dot"></span>
+          AI-Powered Workspace &mdash; Free to Use
+        </div>
+
+        <h1 class="hero-title fade-in delay-1">
+          Your AI workspace<br />
+          <span class="text-gradient">for everything</span>
+        </h1>
+
+        <div class="hero-rotate-wrap fade-in delay-2">
+          <span class="hero-rotate-prefix">→</span>
+          <div class="rotating-text" aria-live="polite" aria-label="Core Pulse capabilities">
+            <span>Search anything</span>
+            <span>Write code faster</span>
+            <span>Build presentations</span>
+            <span>Analyze documents</span>
+            <span>Research anything</span>
+            <span>Generate images</span>
+          </div>
+        </div>
+
+        <p class="hero-sub fade-in delay-3">
+          Core Pulse brings together the most powerful AI capabilities — chat, document analysis,
+          image generation, code assistance, and more — in one beautifully designed workspace.
+        </p>
+
+        <!-- Search Bar -->
+        <div class="search-wrap fade-in delay-4">
+          <form class="search-bar" id="searchForm" role="search" autocomplete="off">
+            <span class="search-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+              </svg>
+            </span>
+            <input
+              type="text"
+              id="searchInput"
+              class="search-input"
+              placeholder="Ask anything… Write code, Analyze Documents, Generate Images, and more"
+              aria-label="Search query"
+            />
+            <button type="submit" class="search-btn" aria-label="Search">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+              Search
+            </button>
+          </form>
+          <p class="search-hint">No sign-up required &mdash; search freely. <a href="signup.html">Create an account</a> for advanced AI features.</p>
+        </div>
+
+        <!-- Results Panel -->
+        <div class="results-panel" id="resultsPanel" aria-live="polite">
+          <div class="results-header">
+            <h3 id="resultsQuery">AI Results</h3>
+            <span style="font-size:0.75rem;color:var(--clr-text-dim);">Powered by Core Pulse AI</span>
+          </div>
+          <div class="results-body" id="resultsBody"></div>
+          <div class="results-cta">
+            <p>Want deeper AI analysis, conversation history, and advanced features?</p>
+            <a href="signup.html" class="btn btn-primary" style="font-size:0.875rem;padding:10px 24px;">
+              Unlock Full AI — Free Sign Up
+            </a>
+          </div>
+        </div>
+
+        <!-- Social Proof -->
+        <div class="social-proof fade-in delay-5">
+          <div class="proof-item">
+            <span class="stars">★★★★★</span>
+            <strong>4.9/5.0</strong>
+            <span>rating</span>
+          </div>
+          <div class="proof-divider" aria-hidden="true"></div>
+          <div class="proof-item">
+            <strong>70,000+</strong>
+            <span>users worldwide</span>
+          </div>
+          <div class="proof-divider" aria-hidden="true"></div>
+          <div class="proof-item">
+            <strong>No sign-up</strong>
+            <span>required</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STATS SECTION
+       ============================================================ -->
+  <section class="stats-section" id="stats" aria-label="Platform statistics">
+    <div class="container">
+      <div class="stats-grid">
+
+        <div class="glass-card stat-card fade-in">
+          <span class="stat-number" data-count="70000" data-suffix="K+">70K+</span>
+          <span class="stat-label">Active Users</span>
+        </div>
+
+        <div class="glass-card stat-card fade-in delay-1">
+          <span class="stat-number" data-count="10000000" data-suffix="M+">10M+</span>
+          <span class="stat-label">AI Responses</span>
+        </div>
+
+        <div class="glass-card stat-card fade-in delay-2">
+          <span class="stat-number" data-count="99.9" data-suffix="%">99.9%</span>
+          <span class="stat-label">Uptime SLA</span>
+        </div>
+
+        <div class="glass-card stat-card fade-in delay-3">
+          <span class="stat-number" data-count="150" data-suffix="+">150+</span>
+          <span class="stat-label">Countries</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FEATURES SECTION
+       ============================================================ -->
+  <section class="section" id="features" aria-labelledby="features-heading">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">✦ Capabilities</span>
+        <h2 class="section-title" id="features-heading">
+          Everything you need,<br /><span class="text-gradient">in one workspace</span>
+        </h2>
+        <p class="section-sub">
+          From instant AI chat to document analysis and code generation — Core Pulse has every tool you need to work smarter.
+        </p>
+      </div>
+
+      <div class="features-grid">
+
+        <!-- AI Chat -->
+        <div class="glass-card feature-card fade-in">
+          <div class="feature-icon" aria-hidden="true">💬</div>
+          <span class="feature-badge">Most Popular</span>
+          <h3>AI Chat</h3>
+          <p>Engage in intelligent, context-aware conversations. Ask questions, brainstorm ideas, get explanations, and receive expert-level answers on any topic — instantly.</p>
+        </div>
+
+        <!-- Document Analysis -->
+        <div class="glass-card feature-card fade-in delay-1">
+          <div class="feature-icon" aria-hidden="true">📄</div>
+          <h3>Document Analysis</h3>
+          <p>Upload PDFs, Word docs, spreadsheets, or any file. Core Pulse AI reads, summarises, and answers questions about your documents in seconds.</p>
+        </div>
+
+        <!-- Image Generation -->
+        <div class="glass-card feature-card fade-in delay-2">
+          <div class="feature-icon" aria-hidden="true">🎨</div>
+          <h3>Image Generation</h3>
+          <p>Describe your vision and watch it come to life. Generate stunning, high-resolution images for presentations, marketing, social media, and creative projects.</p>
+        </div>
+
+        <!-- AI Presentation -->
+        <div class="glass-card feature-card fade-in delay-3">
+          <div class="feature-icon" aria-hidden="true">📊</div>
+          <h3>AI Presentation</h3>
+          <p>Turn any idea or document into a polished, professional presentation in minutes. Beautiful slides, smart layouts, and compelling content — all AI-generated.</p>
+        </div>
+
+        <!-- Core Code -->
+        <div class="glass-card feature-card fade-in delay-4">
+          <div class="feature-icon" aria-hidden="true">💻</div>
+          <h3>Core Code</h3>
+          <p>Write, debug, explain, and optimise code across all major languages. From quick snippets to full applications — your AI coding partner is always ready.</p>
+        </div>
+
+        <!-- AI Research -->
+        <div class="glass-card feature-card fade-in delay-5">
+          <div class="feature-icon" aria-hidden="true">🔬</div>
+          <h3>AI Research</h3>
+          <p>Conduct deep, multi-source research on any topic. Core Pulse synthesises information from across the web and delivers structured, cited research reports.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIALS SECTION
+       ============================================================ -->
+  <section class="section" id="testimonials" aria-labelledby="testimonials-heading" style="padding-top:0;">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">★ Reviews</span>
+        <h2 class="section-title" id="testimonials-heading">Loved by thousands</h2>
+        <p class="section-sub">See what our users are saying about Core Pulse</p>
+      </div>
+
+      <div class="testimonials-grid">
+
+        <div class="glass-card testimonial-card fade-in">
+          <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+          <p class="testimonial-quote">
+            "Core Pulse has completely transformed how I research and write. The AI chat is incredibly accurate, and the document analysis saves me hours every week. It's genuinely the best AI tool I've used."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">S</div>
+            <div class="author-info">
+              <h4>Sarah Mitchell</h4>
+              <span>Content Strategist, London</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card testimonial-card fade-in delay-2">
+          <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+          <p class="testimonial-quote">
+            "As a developer, Core Code is a game-changer. It doesn't just write code — it explains it, debugs it, and suggests improvements. The fact that I can use it without signing up first is brilliant."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">J</div>
+            <div class="author-info">
+              <h4>James Okafor</h4>
+              <span>Senior Software Engineer, Lagos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card testimonial-card fade-in delay-4">
+          <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+          <p class="testimonial-quote">
+            "I use Core Pulse daily for research and presentations. The AI Presentation feature alone is worth it — I can go from a rough idea to a polished deck in under 10 minutes. Absolutely incredible."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">A</div>
+            <div class="author-info">
+              <h4>Anika Sharma</h4>
+              <span>Product Manager, Singapore</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA BANNER
+       ============================================================ -->
+  <section class="section-sm" style="padding-bottom:96px;">
+    <div class="container">
+      <div class="glass-card fade-in" style="padding:64px 48px;text-align:center;background:linear-gradient(145deg,rgba(99,102,241,0.12),rgba(139,92,246,0.08));border-color:rgba(99,102,241,0.2);">
+        <span class="section-label" style="margin-bottom:16px;">⚡ Get Started Free</span>
+        <h2 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:16px;">
+          Ready to work smarter<br /><span class="text-gradient">with Core Pulse AI?</span>
+        </h2>
+        <p style="color:var(--clr-text-muted);max-width:480px;margin:0 auto 32px;font-size:1rem;line-height:1.7;">
+          Join 70,000+ professionals already using Core Pulse. Create your free account and unlock the full power of AI.
+        </p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+          <a href="signup.html" class="btn btn-primary" style="padding:14px 36px;font-size:1rem;">
+            Create Free Account
+          </a>
+          <a href="#features" class="btn btn-ghost" style="padding:14px 36px;font-size:1rem;">
+            Explore Features
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="font-size:1.1rem;" aria-label="Core Pulse">
+          <img src="assets/images/logo-full.png" alt="Core Pulse" style="height:120px;width:auto;object-fit:contain;" loading="eager">
+        </a>
+        <p class="footer-brand-text" style="margin-left:12px;">
+          Core Pulse — The all-in-one AI workspace for modern professionals.
+        </p>
+      </div>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="sep" aria-hidden="true">|</span>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <span class="sep" aria-hidden="true">|</span>
+        <a href="cookies.html">Cookie Policy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       COOKIE BANNER
+       ============================================================ -->
+  <div id="cookieBanner" role="dialog" aria-label="Cookie consent" style="display:none;position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;max-width:640px;width:calc(100% - 48px);background:rgba(13,17,23,0.95);border:1px solid rgba(99,102,241,0.3);border-radius:16px;padding:20px 24px;backdrop-filter:blur(20px);align-items:center;gap:16px;flex-wrap:wrap;box-shadow:0 8px 40px rgba(0,0,0,0.5);">
+    <p style="flex:1;font-size:0.875rem;color:var(--clr-text-muted);min-width:200px;">
+      🍪 We use cookies to improve your experience. See our <a href="cookies.html" style="color:var(--clr-primary);text-decoration:underline;">Cookie Policy</a>.
+    </p>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button id="cookieReject" class="btn btn-ghost" style="padding:8px 18px;font-size:0.85rem;">Decline</button>
+      <button id="cookieAccept" class="btn btn-primary" style="padding:8px 18px;font-size:0.85rem;">Accept All</button>
+    </div>
   </div>
-</header>
 
-<section class="hero">
-  <h1>Your AI workspace for everything</h1>
-  <div class="rotating-text"></div>
-  <p>Core Pulse brings together AI capabilities — chat, document analysis, image generation, code assistance, and more — in one beautifully designed workspace.</p>
-
-  <form id="search-form">
-    <input id="search-input" type="text" placeholder="Ask anything... Write Code, Analyze Documents, Generate Images and more" />
-    <button type="submit">Search</button>
-  </form>
-
-  <div id="results"></div>
-</section>
-
-<footer>
-  <div class="logo">Core Pulse</div>
-  <div class="links">
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms & Conditions</a>
-    <a href="cookies.html">Cookie Policy</a>
-  </div>
-</footer>
-
-<script src="js/app.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
